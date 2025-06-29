@@ -4,14 +4,8 @@ from commands import execute_command
 
 
 def main(directory=None):
-    """
-    Основна функція, яка приймає шлях до директорії (опціонально)
-    та реалізує цикл взаємодії з користувачем.
-    """
+    print("Welcome to the assistant bot!")
    
-    print(f"Welcome to the assistant bot! Working directory: {directory}")
-   
-    
     while True:
         user_input = input("Enter a command: ").strip()
         if not user_input:
@@ -32,7 +26,7 @@ if __name__ == "__main__":
         sys.exit(1)
         
     # Якщо аргумент командного рядка передано, використовуємо його
-    directory_path = sys.argv[1] 
+    directory_path = sys.argv[1] if len(sys.argv) > 1 else None
 
     # Передаємо шлях до функції main
     main(directory_path)
